@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkbox Functionality</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Saved Profiles</h2>
+
+<div id="app">
+    <div class="saved-card">
+        <table class="saved-table">
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="selectAll">
+                    </th>
+                    <th>Title</th>
+                    <th>Industry</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" class="row-checkbox" /></td>
+                    <td>Company A</td>
+                    <td>Technology</td>
+                    <td>info@companyA.com</td>
+                    <td>123-456-7890</td>
+                    <td><button>Delete</button></td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" class="row-checkbox" /></td>
+                    <td>Company B</td>
+                    <td>Finance</td>
+                    <td>info@companyB.com</td>
+                    <td>987-654-3210</td>
+                    <td><button>Delete</button></td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" class="row-checkbox" /></td>
+                    <td>Company C</td>
+                    <td>Real Estate</td>
+                    <td>info@companyC.com</td>
+                    <td>326-232-9182</td>
+                    <td><button>Delete</button></td>
+                  </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+
+    // Select/Deselect all checkboxes
+const globalCheckbox = document.querySelector("#selectAll");
+const individualCheckboxes = document.querySelectorAll(".row-checkbox");
+globalCheckbox.addEventListener('change', function(){
+    individualCheckboxes.forEach((checkbox)=>{
+      checkbox.checked = globalCheckbox.checked;
+    })
+})
+
+ // Individual checkbox
+ individualCheckboxes.forEach((checkbox)=>{
+    checkbox.addEventListener("change", function(){
+      const allChecked =  Array.from(individualCheckboxes).every((checkbox)=>{
+       return checkbox.checked 
+       });
+      globalCheckbox.checked = allChecked;
+    })
+ })
+</script>
+</body>
+</html>
