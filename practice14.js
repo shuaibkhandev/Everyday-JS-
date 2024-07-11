@@ -9,4 +9,4 @@ function vowels(para) {
     console.log(count);
 }
 
-vowels("Hello Now I am Checking total vowels number in my para")
+vowels("Hello Now I am Checking total vowels number in my paragraphjjjeA")

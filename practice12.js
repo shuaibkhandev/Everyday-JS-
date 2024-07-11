@@ -5,5 +5,5 @@ function reverse_number(num){
 }
 
 
-const ans = reverse_number(1234554321);
+const ans = reverse_number(12345);
 console.log(ans);
