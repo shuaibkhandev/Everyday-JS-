@@ -18,11 +18,14 @@ const updateTime = () => {
 
   let addZero = (num) => (num < 10 ? `0${num}` : num);
 
-  console.log(
-    `Today is: ${day} Current Time is ${addZero(hours)}:${addZero(
-      min
-    )}:${addZero(sec)}:${prepand}`
-  );
+  // console.log(
+  //   `Today is: ${day} Current Time is ${addZero(hours)}:${addZero(
+  //     min
+  //   )}:${addZero(sec)}:${prepand}`
+  // );
+  document.getElementById("demo").innerHTML =  ` ${addZero(hours)}:${addZero(
+    min
+  )}:${addZero(sec)}:${prepand}`
 };
 
 setInterval(updateTime, 1000);
