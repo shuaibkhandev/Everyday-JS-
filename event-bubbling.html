@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling | Event Propagation | Event Capturing | Event Delegation</title>
+
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.box{
+    min-width: 100px;
+    min-height: 100px;
+    padding: 100px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.grandParent{
+    background-color: #b1d4e0;
+    color: black;
+}
+
+.parent{
+    background-color: #145da0;
+}
+
+.child{
+    background-color: #0c2d48;
+}
+    </style>
+</head>
+<body>
+
+    <div class="main">
+    <div class="grandParent box">
+        Grand Parent
+        <div class="parent box">
+            Parent
+            <div class="child box">
+                Child
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+
+        const grandParent = document.querySelector(".grandParent");
+        const parent = document.querySelector(".parent");
+        const child = document.querySelector(".child");
+
+
+
+        // console.log("SSS")
+
+        // Event Buppling || Event Propagation
+
+    //  grandParent.addEventListener("click", ()=>{
+    //         console.log("Click on Grand Parent Event.. 'Bubble'");
+    //     })
+    //          parent.addEventListener("click", ()=>{
+    //         console.log("Click on Parent Event.. 'Bubble'");
+    //     })
+     
+    //     child.addEventListener("click", ()=>{
+    //         console.log("Click on Child Event.. 'Bubble'");
+    //     })
+
+
+                // Event Capturing
+
+    //  grandParent.addEventListener("click", ()=>{
+    //         console.log("Click on Grand Parent Event.. 'Capture'");
+    //     }, true)
+    //          parent.addEventListener("click", ()=>{
+    //         console.log("Click on Parent Event.. 'Capture'");
+    //     }, true)
+     
+    //     child.addEventListener("click", ()=>{
+    //         console.log("Click on Child Event.. 'Capture'");
+    //     }, true)
+
+    
+                // Event Delegation
+
+    //  grandParent.addEventListener("click", (event)=>{
+    //         console.log("Click on Grand Parent Event.. 'Delegation'", event);
+    //     })
+             
+    //      console.log("END")
+
+
+    console.log("OUTER From Promise..");
+
+     new Promise((resolve) => setTimeout(() => {
+        console.log("S");
+        resolve(); 
+    }, 5000));
+
+    console.log("OUTER From Promise..1");
+
+
+
+
+    </script>
+</body>
+</html>
