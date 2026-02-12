@@ -107,27 +107,37 @@
 
 
 
-const userMethods = {
-    about : function(){
-    return `Hello My name is ${this.firstName} ${this.lastName}, i am ${this.age} years old`; 
-    }
+// const userMethods = {
+//     about : function(){
+//     return `Hello My name is ${this.firstName} ${this.lastName}, i am ${this.age} years old`; 
+//     }
+// }
+
+// function userFunc(firstName, lastName, age){
+//     const user = Object.create(userFunc.prototype);
+//     user.firstName = firstName;
+//     user.lastName = lastName;
+//     user.age = age;
+//     return user;
+// }
+// userFunc.prototype.about = function(){
+//     return `Hello My name is ${this.firstName} ${this.lastName}, i am ${this.age} years old`; 
+//     }
+// const func1 = userFunc("Asad", "Khan", 23)
+// const func2 = userFunc("Shuaib", "khan", 25)
+// console.log(func1.about());
+
+
+
+function User(name, age){
+    this.name = name;
+    this.age = age;
 }
-
-function userFunc(firstName, lastName, age){
-    const user = Object.create(userFunc.prototype);
-    user.firstName = firstName;
-    user.lastName = lastName;
-    user.age = age;
-    return user;
+User.prototype.about = function(){
+    return `My name is ${this.name}, and i am ${this.age} years old.`
 }
-userFunc.prototype.about = function(){
-    return `Hello My name is ${this.firstName} ${this.lastName}, i am ${this.age} years old`; 
-    }
-const func1 = userFunc("Asad", "Khan", 23)
-const func2 = userFunc("Shuaib", "khan", 25)
-console.log(func1.about());
-
-
+const user1 = new User("Shuaib Khan", 25);
+console.log(user1);
 
 
 
